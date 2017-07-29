@@ -16,8 +16,9 @@ app.listen(PORT, () => {
 });
 
 const render = require('./services/render');
-
 app.get('/', render);
+const authRoutes = require('./routes/auth-routes');
+app.use('/auth', authRoutes);
 
 app.use('*', (req, res) => {
   res.status(400).json({ message: 'Not found!' });

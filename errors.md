@@ -49,3 +49,35 @@ Error: Cannot find module 'services/render'
     at tryModuleLoad (module.js:466:12)
     at Function.Module._load (module.js:458:3)
 ```
+
+4. Had to fix something in my render middleware
+
+```
+TypeError: Cannot read property 'path' of undefined
+    at module.exports (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/services/render.js:2:29)
+    at Layer.handle [as handle_request] (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/node_modules/express/lib/router/index.js:275:10)
+    at SendStream.error (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/node_modules/serve-static/index.js:121:7)
+    at emitOne (events.js:115:13)
+```
+5. Put my dang views in services instead of in views
+
+```
+Error: Failed to lookup view "auth/login" in views directory "/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/views"
+    at Function.render (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/node_modules/express/lib/response.js:971:7)
+    at module.exports (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/services/render.js:8:7)
+    at Layer.handle [as handle_request] (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/node_modules/express/lib/router/route.js:137:13)
+    at authController.login (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/controllers/auth-controller.js:8:3)
+    at Layer.handle [as handle_request] (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/node_modules/express/lib/router/layer.js:95:5)
+```
+
