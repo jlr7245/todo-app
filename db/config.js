@@ -6,7 +6,7 @@ const options = {
 
 const pgp = require('pg-promise')(options);
 
-module.exports = () => {
+module.exports = (() => {
   if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
     return pgp({
       database: 'todo_dev',
@@ -16,4 +16,4 @@ module.exports = () => {
   } else if (process.env.NODE_ENV === 'production') {
     return pgp(process.env.DATABASE_URL);
   }
-};
+})();

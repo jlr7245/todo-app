@@ -120,3 +120,39 @@ ReferenceError: passport is not defined
     at Object.<anonymous> (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/app.js:40:20)
     at Module._compile (module.js:569:30)
 ```
+
+8. Had to fix my config.js
+
+```
+WARNING: Creating a duplicate database object for the same connection.
+    at module.exports (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/db/config.js:11:12)
+    at Object.<anonymous> (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/models/todo.js:1:97)
+```
+
+9. Had to instantiate res.locals.data
+
+```
+TypeError: Cannot set property 'todos' of undefined
+    at Todo.findUserTodos.then.todos (/Users/JLR/GA_TEACH/DELOREAN/UNIT02/HW/todo-app/controllers/todos-controller.js:13:29)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:169:7)
+(node:72677) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): ReferenceError: res is not defined
+(node:72677) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+```
+
+10. Forgot RETURNING *
+
+```
+QueryResultError {
+    code: queryResultErrorCode.noData
+    message: "No data returned from the query."
+    received: 0
+    query: "
+    INSERT INTO todos
+    (user_id, title, description)
+    VALUES (1, 'Finish this todo app', 'categories, styling, fix columns')
+  "
+}
+(node:72769) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 2): ReferenceError: res is not defined
+(node:72769) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+```

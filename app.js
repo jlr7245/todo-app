@@ -39,6 +39,8 @@ const render = require('./services/render');
 app.get('/', render);
 const userRouter = require('./routes/user-routes');
 app.use('/user', userRouter);
+const todoRouter = require('./routes/todo-routes');
+app.use('/todo', todoRouter);
 
 app.use('*', (req, res) => {
   res.status(400).json({ message: 'Not found!' });

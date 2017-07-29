@@ -1,0 +1,6 @@
+<% include ../partials/boilerplate %>
+<% data.todos.forEach(todo => { %>
+  <h3><%= todo.title %></h3>
+  <p><%= todo.description %></p>
+<% }) %>
+<% include ../partials/end %>
