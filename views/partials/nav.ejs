@@ -1,0 +1,15 @@
+<header>
+  <nav>
+    <div class='logo'>Logo here</div>
+    <ul>
+      <li><a href='/'>Home</a></li>
+      <% if (isUser) { %>
+      <li><a href='/todos'>Todos</a></li>
+      <li><a href='/auth/logout'>Log Out</a></li>
+      <% } else { %>
+      <li><a href='/auth/login'>Log In</a></li>
+      <li><a href='/auth/register'>Register</a></li>
+      <% } %>
+    </ul>
+  </nav>
+</header>
