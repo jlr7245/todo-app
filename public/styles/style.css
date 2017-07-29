@@ -14,7 +14,16 @@ header {
 
 nav {
   display: flex;
+  flex: 1;
   justify-content: space-between;
   padding: 30px 80px;
   box-sizing: border-box;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li a {
+  padding: 15px 30px;
 }
