@@ -6,7 +6,7 @@ const todosController = {};
 todosController.index = (req, res, next) => {
   res.locals.meta = {
     path: 'todos/todos-index',
-    currentPage: 'todos',
+    page: 'todos',
   };
   res.locals.data = {};
   Todo.findUserTodos(req.user.id)
@@ -14,13 +14,13 @@ todosController.index = (req, res, next) => {
       res.locals.data.todos = todos;
       return next();
     })
-    .catch(catchErr);
+    .catch(err => catchErr(err, req, res));
 };
 
 todosController.new = (req, res, next) => {
   res.locals.meta = {
     path: 'todos/todos-add',
-    currentPage: 'add-todo',
+    page: 'add-todo',
   };
   next();
 };
@@ -34,7 +34,15 @@ todosController.create = (req, res) => {
     .then(() => {
       res.redirect('/todo');
     })
-    .catch(catchErr);
+    .catch(err => catchErr(err, req, res));
+};
+
+todosController.complete = (req, res) => {
+  Todo.complete(req.params.id, req.user.id)
+    .then(() => {
+      res.json({ message: 'update successful', successful: true });
+    })
+    .catch(err => catchErr(err, req, res));
 };
 
 module.exports = todosController;

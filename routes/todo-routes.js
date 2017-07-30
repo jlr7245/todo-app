@@ -11,6 +11,8 @@ todoRouter.post('/', userHelpers.loginRequired, todosController.create);
 
 todoRouter.get('/new', userHelpers.loginRequired, todosController.new, render);
 
+todoRouter.put('/:id/complete', todosController.complete);
+
 // todoRouter.get('/:id', todosController.show, render);
 // todoRouter.put('/:id', todosController.update);
 // todoRouter.get('/:id/edit', todosController.edit, render);

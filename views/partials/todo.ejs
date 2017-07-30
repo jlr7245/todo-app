@@ -1,0 +1,9 @@
+<div class='todo' data-id='<%= todo.id %>'>
+  <h3><%= todo.title %></h3>
+  <p><%= todo.description %></p>
+  <% if (todo.completed) { %>
+    <span class='done'>Done</span>
+  <% } else { %>
+    <span class='not-done'>To Do</span>
+  <% } %>
+</div>
