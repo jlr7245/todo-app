@@ -1,4 +1,4 @@
-\c todo_dev
+--\c todo_dev
 
 ALTER TABLE todos 
 ADD COLUMN completed BOOLEAN;

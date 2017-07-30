@@ -1,4 +1,4 @@
-\c todo_dev;
+--\c todo_dev;
 
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
