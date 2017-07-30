@@ -28,20 +28,6 @@ nav ul li a {
   padding: 15px 30px;
 }
 
-.todo span {
-  background-color: lightblue;
-  display: inline-block;
-  padding: 5px 15px;
-  cursor: pointer;
-}
-
-.todo {
-  margin: 5px;
-  padding: 15px;
-  box-sizing: border-box;
-  border: 1px solid #eee;
-}
-
 .todos .container {
   width: 80vw;
   max-width: 1000px;
@@ -51,3 +37,29 @@ nav ul li a {
   display: flex;
   flex-direction: column;
 }
+
+.todo span, .delete-contain input[type=submit] {
+  background-color: lightblue;
+  display: inline-block;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.todo {
+  margin: 5px;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+}
+
+.title-status {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.title-status h3 {
+  flex: 1;
+  padding: 5px 15px;
+  font-size: 1.4em;
+  line-height: 1.4em;
+}
+
